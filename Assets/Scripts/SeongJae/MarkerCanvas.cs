@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class MarkerCanvas : MonoBehaviour
 {
+    [Header("Debug")]
+    [SerializeField] private Button button;
     [SerializeField] private PopUpPanel popUpPanel;
 
     public void InitSettings(Vector3 position, PopUpPanel popUpObject)
@@ -13,7 +15,7 @@ public class MarkerCanvas : MonoBehaviour
 
         // 마커 버튼 설정 및 이벤트 연결
         Transform marker = transform.Find("Marker");
-        Button button = marker.GetComponent<Button>();
+        button = marker.GetComponent<Button>();
 
         if (button == null)
         {
@@ -23,11 +25,14 @@ public class MarkerCanvas : MonoBehaviour
         }
         button.onClick.RemoveAllListeners(); // 에러 방지를 위해 이벤트 연결 해제.
         button.onClick.AddListener(ShowPopUp);
+
+        // 팝업창 초기설정
+        popUpPanel.InitSettings(button.gameObject);
     }
 
     public void ShowPopUp()
     {
-        gameObject.SetActive(false);
+        button.gameObject.SetActive(false);
         popUpPanel.OpenPopUp();
     }
 }
