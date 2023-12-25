@@ -25,6 +25,9 @@ public class MarkerCanvas : MonoBehaviour
         }
         button.onClick.RemoveAllListeners(); // 에러 방지를 위해 이벤트 연결 해제.
         button.onClick.AddListener(ShowPopUp);
+
+        // 팝업창 초기설정
+        popUpPanel.InitSettings(button.gameObject);
     }
 
     public void ShowPopUp()
