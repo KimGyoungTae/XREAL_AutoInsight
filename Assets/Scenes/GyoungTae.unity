@@ -8685,7 +8685,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 810866067}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1067759276}
+        m_TargetAssemblyTypeName: ChangeModelColor, Assembly-CSharp
+        m_MethodName: ChangeExternalColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &810866067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11672,6 +11684,7 @@ GameObject:
   - component: {fileID: 1067759274}
   - component: {fileID: 1067759273}
   - component: {fileID: 1067759275}
+  - component: {fileID: 1067759276}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -11729,6 +11742,40 @@ MonoBehaviour:
   mainCamera: {fileID: 1895037648}
   TestUI: {fileID: 2007172703}
   testUI: {fileID: 1191523414}
+--- !u!114 &1067759276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067759272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4facbbfb5d9594ca874fef7a56f9ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CarExternal:
+  - {fileID: 351176020}
+  - {fileID: 1205165210}
+  - {fileID: 1953699064}
+  - {fileID: 960158172}
+  - {fileID: 503134866}
+  - {fileID: 2016982846}
+  - {fileID: 652173647}
+  - {fileID: 1693987728}
+  - {fileID: 759850044}
+  - {fileID: 800807337}
+  CarInternal:
+  - {fileID: 965359810}
+  - {fileID: 977709291}
+  - {fileID: 1619918056}
+  MaterialExternal:
+  - {fileID: 2100000, guid: 927f6e2060978174782e3f963f63649d, type: 2}
+  - {fileID: 2100000, guid: 7ed92731f25be90478a48fff84860047, type: 2}
+  - {fileID: 2100000, guid: aa6e3e6c438894c5986820afda6eb34d, type: 2}
+  MaterialInternal:
+  - {fileID: -1141131775685374288, guid: 302a182bcc4a95945b1617b238c3f648, type: 3}
+  - {fileID: 2100000, guid: eedccd5e416b7451094614bb6023e86f, type: 2}
 --- !u!1 &1079845415
 GameObject:
   m_ObjectHideFlags: 0
@@ -17113,7 +17160,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1515320579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1067759276}
+        m_TargetAssemblyTypeName: ChangeModelColor, Assembly-CSharp
+        m_MethodName: ChangeInternalColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1515320579
 MonoBehaviour:
   m_ObjectHideFlags: 0
