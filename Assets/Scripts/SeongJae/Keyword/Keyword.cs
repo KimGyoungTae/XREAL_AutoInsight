@@ -12,7 +12,8 @@ public static class Keyword
     { 
         FuelType,
         CarType,
-        CarPrice
+        CarPrice,
+        NumberOfKeywords
     }
 
     public enum FuelType

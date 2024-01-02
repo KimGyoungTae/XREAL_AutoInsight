@@ -2,6 +2,8 @@ using UnityEngine.UI;
 using UnityEngine;
 using Unity.VisualScripting;
 using System;
+using static Keyword;
+using UnityEngine.InputSystem;
 /// <summary>
 /// KeywordGroupCreator와 KeywordToggle의 중간관리 클래스
 /// Toggle의 생성을 담당.
@@ -13,7 +15,7 @@ public class KeywordToggleGroup : MonoBehaviour
     [Header ("Debug")]
     [SerializeField] GameObject keywordTogglePrefab;
 
-    public void InitSettings<T>(T currentType) where T : Enum
+    public void InitSettings<T>(T currentCategory) where T : Enum
     {
         toggleGroup = GetComponent<ToggleGroup>();
         if(toggleGroup == null)
@@ -23,7 +25,7 @@ public class KeywordToggleGroup : MonoBehaviour
 
         //Default는 고려하지 않기 위해서 1 빼줌.
         int numberOfItems = Enum.GetValues(typeof(T)).Length - 1;
-        string[] keywords = Keyword.GetKeywordArray<T>(currentType);
+        string[] keywords = Keyword.GetKeywordArray<T>(currentCategory);
 
         for (int i = 0; i < numberOfItems; ++i)
         {
@@ -34,7 +36,8 @@ public class KeywordToggleGroup : MonoBehaviour
                 toggle = go.AddComponent<KeywordToggle>();
             }
 
-            toggle.InitSettings(keywords[i], toggleGroup);
+            T currentEnum = (T)Enum.Parse(typeof(T), i.ToString());
+            toggle.InitSettings(currentEnum, keywords[i], toggleGroup);
         }
     }
 }
