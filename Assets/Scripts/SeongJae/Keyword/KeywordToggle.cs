@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,9 +11,12 @@ using UnityEngine.UI;
 public class KeywordToggle : MonoBehaviour
 {
     private Toggle toggle;
+    private Enum currentType;
 
-    public void InitSettings(string keyword, ToggleGroup toggleGroup)
+    public void InitSettings<T>(T currentEnum, string keyword, ToggleGroup toggleGroup) where T : Enum
     {
+        currentType = currentEnum;
+        Debug.Log(currentType);
         SetText(keyword);
         SetGroup(toggleGroup);
         toggle = GetComponent<Toggle>();

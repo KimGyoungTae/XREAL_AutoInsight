@@ -6,9 +6,15 @@ public class CarData
     private int id;
     private string name;
     public string Name { get => name; }
+
     private Keyword.FuelType fuelType;
+    public Keyword.FuelType FuelType { get => fuelType; }
+
     private Keyword.CarType carType;
+    public Keyword.CarType CarType { get => carType; }
+
     private Keyword.CarPrice carPrice;
+    public Keyword.CarPrice CarPrice { get => carPrice; }
 
     public void InitSettings(int id, string name, string fuelType, string carType, int carPrice)
     {
