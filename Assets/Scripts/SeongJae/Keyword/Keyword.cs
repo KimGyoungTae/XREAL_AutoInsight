@@ -20,7 +20,7 @@ public static class Keyword
         Default = -1,
         Gasoline,
         Hybrid,
-        Electic
+        Electric
     }
 
     public enum CarType
@@ -35,7 +35,7 @@ public static class Keyword
     public enum CarPrice
     {
         Default = -1,
-        From3000To4000,
+        Under4000,
         From4000To5000,
         From5000To6000,
         Over6000
@@ -44,8 +44,8 @@ public static class Keyword
     //TMP는 한글 폰트를 따로 설치해야해서 우선 영어로 대체.
     private static string[] Fuel = new string[] { "Gasoline", "Hybrid", "Electic" };
     private static string[] TypeOfCar = new string[] { "Sedan", "SUV", "Hatchback", "Truck" };
-    // 3000이상과 4000이상의 범위가 겹치는 건 알지만, 간단하게 하기 위해 우선 이렇게..
-    private static string[] Price = new string[] { "Over3000", "Over4000", "Over5000", "Over6000" };
+    // 4000이상과 5000이상의 범위가 겹치는 건 알지만, 간단하게 하기 위해 우선 이렇게..
+    private static string[] Price = new string[] { "Under4000", "Over4000", "Over5000", "Over6000" };
 
     // 메뉴 등을 만들거나 할 때 enum을 해당하는 string으로 반환하는 함수.
     // 조잡한 함수이기에 추후 구조에 대한 논의가 더 나오면 처분 예정.
