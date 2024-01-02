@@ -6,17 +6,19 @@ using UnityEngine.UI;
 
 /// <summary>
 /// 키워드를 보여주는 하나의 토글을 담당하는 클래스.
-/// 기본적으로 토글 글자 설정 및 그룹 설정을 제외하면 아직 역할이 없음.
+/// 기본적으로 토글 글자 설정 및 그룹 설정을 담당.
+/// 켜진 토글의 currentType을 다른 객체로 전달하는 역할도 맡고 있음.
 /// </summary>
 public class KeywordToggle : MonoBehaviour
 {
     private Toggle toggle;
     private Enum currentType;
+    public event Action<Enum> OnToggleOn;
+    public event Action OnToggleOff;
 
-    public void InitSettings<T>(T currentEnum, string keyword, ToggleGroup toggleGroup) where T : Enum
+    public void InitSettings<T>(T currentEnum, string keyword, ToggleGroup toggleGroup, KeywordToggleGroup group) where T : Enum
     {
         currentType = currentEnum;
-        Debug.Log(currentType);
         SetText(keyword);
         SetGroup(toggleGroup);
         toggle = GetComponent<Toggle>();
@@ -24,6 +26,7 @@ public class KeywordToggle : MonoBehaviour
         {
             toggle = transform.AddComponent<Toggle>();
         }
+        toggle.onValueChanged.AddListener(ChangeType);
     }
 
     private void SetText(string keyword)
@@ -51,5 +54,38 @@ public class KeywordToggle : MonoBehaviour
         }
 
         toggle.group = toggleGroup;
+    }
+
+    public void ChangeType(bool isOn)
+    {
+        if (isOn)
+        {
+            OnToggleOn?.Invoke(currentType);
+        }
+        else
+        {
+            OnToggleOff?.Invoke();
+        }
+    }
+
+    public void BindEvent(Action<Enum> onToggleOn, Action onToggleOff)
+    {
+        OnToggleOn -= onToggleOn;
+        OnToggleOn += onToggleOn;
+        OnToggleOff -= onToggleOff;
+        OnToggleOff += onToggleOff;
+    }
+
+    private void OnDestroy()
+    {
+        foreach (Delegate d in OnToggleOn.GetInvocationList())
+        {
+            OnToggleOn -= (Action<Enum>)d;
+        }
+
+        foreach (Delegate d in OnToggleOff.GetInvocationList())
+        {
+            OnToggleOff -= (Action)d;
+        }
     }
 }

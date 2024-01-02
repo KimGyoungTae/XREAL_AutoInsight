@@ -23,23 +23,22 @@ public class CarDataStorage
     {
         if (carData == null)
         {
-            carData = new List<CarData>[Enum.GetValues(typeof(Keyword.FuelType)).Length][][];
+            carData = new List<CarData>[Enum.GetValues(typeof(Keyword.FuelType)).Length - 1][][];
             for (int i = 0; i < carData.Length; ++i)
             {
-                carData[i] = new List<CarData>[Enum.GetValues(typeof(Keyword.CarType)).Length][];
+                carData[i] = new List<CarData>[Enum.GetValues(typeof(Keyword.CarType)).Length - 1][];
                 for (int j = 0; j < carData[i].Length; ++j)
                 {
-                    carData[i][j] = new List<CarData>[Enum.GetValues(typeof(Keyword.CarPrice)).Length];
+                    carData[i][j] = new List<CarData>[Enum.GetValues(typeof(Keyword.CarPrice)).Length - 1];
                 }
             }
         }
 
-        List<CarData> currentCategory = carData[(int)data.FuelType][(int)data.CarType][(int)data.CarPrice];
-        if (currentCategory == null)
+        if (carData[(int)data.FuelType][(int)data.CarType][(int)data.CarPrice] == null)
         {
-            currentCategory = new List<CarData>();
+            carData[(int)data.FuelType][(int)data.CarType][(int)data.CarPrice] = new List<CarData>();
         }
-        currentCategory.Add(data);
+        carData[(int)data.FuelType][(int)data.CarType][(int)data.CarPrice].Add(data);
     }
 
     /// <summary>
@@ -54,6 +53,7 @@ public class CarDataStorage
         List<CarData> requestedData = carData[(int)fuelType][(int)carType][(int)carPrice];
         if (requestedData == null)
         {
+            requestedData = new List<CarData>();
             int dataLength = (int)Keyword.KeywordTypes.NumberOfKeywords;
             // KeywordToggleGroup과 마찬가지로 Default값을 빼기 위해 -1
             int fuelTypeLength = Enum.GetValues(typeof(Keyword.FuelType)).Length - 1;
@@ -65,17 +65,18 @@ public class CarDataStorage
 
             //이후 어떤 조건을 제외하고 만족하는 지 설정.
             //유저가 정확히 원한 설정이 아니기에 랜덤은 한번만 돌리고 없으면 쿨하게 넘어가는 식으로.
-            //추후 추천도 등을 통해 가중치 설정 반영 가능.
+            //추후 매커니즘 수정예정.
             secondaryData[EXCEPT_FUEL_TYPE] = carData[UnityEngine.Random.Range(0, fuelTypeLength)][(int)carType][(int)carPrice];
             secondaryData[EXCEPT_CAR_TYPE] = carData[(int)fuelType][UnityEngine.Random.Range(0, carTypeLength)][(int)carPrice];
             secondaryData[EXCEPT_CAR_PRICE] = carData[(int)fuelType][(int)carType][UnityEngine.Random.Range(0, carPriceLength)];
 
             foreach (var data in secondaryData)
             {
-                requestedData.AddRange(data);
+                if(data != null)
+                    requestedData.AddRange(data);
             }
 
-            if(requestedData == null)
+            if(requestedData.Count == 0)
             {
                 Debug.Log("조건에 맞는 차량 없음");
                 return null;
