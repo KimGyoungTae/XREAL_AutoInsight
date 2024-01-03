@@ -11,10 +11,8 @@ public class TabletUI : MonoBehaviour
     public InputActionAsset inputActions;
 
     public Camera mainCamera;
-   
-
     public GameObject TestUI;
-    public Text testUI;
+ 
 
     private float distanceFromCamera = 1.5f;
 
@@ -25,8 +23,6 @@ public class TabletUI : MonoBehaviour
     void Update()
     {
         var primaryButton = inputActions.actionMaps[2].actions[9].ReadValue<float>();
-
-        testUI.text = primaryButton.ToString();
 
         // 이전 프레임과 현재 프레임의 값이 다를 때만 상태를 업데이트
         if (primaryButton == 1 && previousPrimaryButton != 1)

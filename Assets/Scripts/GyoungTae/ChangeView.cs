@@ -16,6 +16,7 @@ public class ChangeView : MonoBehaviour
     public Quaternion OutsideRotation = Quaternion.Euler(0f, 0f, 0f);
 
     public ContinuousMoveProviderBase continuousMove;
+    public GameObject ExteriorLight;
     private float saveMoveSpeedValue;
 
     private void Start()
@@ -37,7 +38,9 @@ public class ChangeView : MonoBehaviour
     {
         if (targetObject != null)
         {
-          
+
+            ExteriorLight.SetActive(false);
+
             // 클릭 시 targetObject의 transform의 position과 rotation을 변경
             targetObject.transform.position = InsidePosition;
             targetObject.transform.rotation = InsideRotation;
@@ -50,7 +53,9 @@ public class ChangeView : MonoBehaviour
     {
         if (targetObject != null)
         {
-           
+
+            ExteriorLight.SetActive(true); 
+
             // 클릭 시 targetObject의 transform의 position과 rotation을 변경
             targetObject.transform.position = OutsidePosition;
             targetObject.transform.rotation = OutsideRotation;
