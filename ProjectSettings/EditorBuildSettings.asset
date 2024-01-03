@@ -5,9 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/HomeScene.unity
+    guid: 1bc48cdb7aa312241bbadb9d568f4590
+  - enabled: 1
+    path: Assets/Scenes/CarTrimScene.unity
+    guid: 328d42ba92ca41443844f32eba8c4e73
+  - enabled: 1
+    path: Assets/Scenes/NewCarMainScene.unity
+    guid: 42e49a932244fff40b153fcca656704e
+  - enabled: 1
+    path: Assets/Scenes/GyoungTae.unity
+    guid: 92005f331e8b5bd41ade77e8bcab3f68
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 24883c79f8d932143835210a3abc8574,
       type: 2}
