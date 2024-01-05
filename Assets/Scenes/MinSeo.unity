@@ -11292,6 +11292,7 @@ MonoBehaviour:
   OutsidePosition: {x: 2.6, y: 0, z: 6.3}
   OutsideRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
   continuousMove: {fileID: 1363808726}
+  ExteriorLight: {fileID: 0}
 --- !u!4 &1067759274
 Transform:
   m_ObjectHideFlags: 0
@@ -13315,6 +13316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Device Simulator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

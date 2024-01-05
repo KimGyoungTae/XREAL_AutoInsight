@@ -24,10 +24,12 @@ public class VideoControl : MonoBehaviour
         videoClip.loopPointReached += OnVideoEnd;
     }
 
+  
+
     public void OnPauseVideo()
     {
-        myVideo.SetActive(false);
         videoClip.Pause();
+        myVideo.SetActive(false);
     }
 
     private void OnVideoEnd(VideoPlayer source)
@@ -35,5 +37,7 @@ public class VideoControl : MonoBehaviour
         rawImageHandle.enabled = false;
 
         videoClip.loopPointReached -= OnVideoEnd;
+        
+        OnPauseVideo();
     }
 }
