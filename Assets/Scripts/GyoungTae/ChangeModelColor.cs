@@ -76,6 +76,12 @@ public class ChangeModelColor : MonoBehaviour
         currentInternalIndex = (currentInternalIndex + 1) % MaterialInternal.Length;
     }
 
+    public void CompareInternalColor(int internalColorIndex)
+    {
+        currentInternalIndex = internalColorIndex;
+        UpdateMaterialsForInternal(CarInternal);
+    }
+
 
     void UpdateMaterialsForWheel(GameObject[] objectsArray)
     {
@@ -96,6 +102,12 @@ public class ChangeModelColor : MonoBehaviour
     {
         UpdateMaterialsForWheel(CarWheel);
         currentWheelIndex = (currentWheelIndex + 1) % MaterialWheel.Length;
+    }
+
+    public void CompareWheelsColor(int wheelColorIndex)
+    {
+        currentWheelIndex = wheelColorIndex;
+        UpdateMaterialsForWheel(CarWheel);
     }
 
 }

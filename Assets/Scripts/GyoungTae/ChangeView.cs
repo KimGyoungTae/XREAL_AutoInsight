@@ -39,7 +39,7 @@ public class ChangeView : MonoBehaviour
         if (targetObject != null)
         {
 
-            ExteriorLight.SetActive(false);
+         //  ExteriorLight.SetActive(false);
 
             // 클릭 시 targetObject의 transform의 position과 rotation을 변경
             targetObject.transform.position = InsidePosition;
@@ -47,6 +47,39 @@ public class ChangeView : MonoBehaviour
 
             continuousMove.moveSpeed = 0;
         }
+    }
+
+    public void ChangeInsideView(int moveIndex)
+    {
+        ExteriorLight.SetActive(false);
+
+        switch (moveIndex)
+        {
+            case 0:
+                Vector3 zeroIndex_InsidePosition = new Vector3(7.1f, 0.05f, 2.95f);
+                InsidePosition = zeroIndex_InsidePosition;
+                break;
+            case 1:
+                Vector3 oneIndex_InsidePosition = new Vector3(6.2f, 0.05f, 2.95f);
+                InsidePosition = oneIndex_InsidePosition;
+                break;
+            case 2:
+                Vector3 twoIndex_InsidePosition = new Vector3(6.2f, 0.05f, 3.88f);
+                InsidePosition = twoIndex_InsidePosition;
+                break;
+            case 3:
+                Vector3 thirdIndex_InsidePosition = new Vector3(6.9f, 0.05f, 3.88f);
+                InsidePosition = thirdIndex_InsidePosition;
+                break;
+
+            default:
+                break;
+        }
+
+        continuousMove.moveSpeed = 0;
+        targetObject.transform.position = InsidePosition;
+        targetObject.transform.rotation = InsideRotation;
+
     }
 
     public void ChangeOutSidesideViewPoint()

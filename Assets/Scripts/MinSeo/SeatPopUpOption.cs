@@ -6,11 +6,21 @@ using UnityEngine.UI;
 public class SeatPopUpOption : MonoBehaviour
 {
     public GameObject optionPopUp;
-    public Button optionButton;
-    public Button optionButton2;
 
-    public void ClosePopUp()
+    
+    void Start()
     {
         optionPopUp.SetActive(false);
     }
+
+    public void ChoiceWhiteOption()
+    {
+        Debug.Log("화이트 내장 시트 옵션 선택");
+    }
+
+    public void ChoiceBlackOption()
+    {
+        Debug.Log("블랙 내장 시트 옵션 선택");
+    }
+
 }
