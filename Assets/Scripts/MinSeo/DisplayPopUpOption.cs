@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class DisplayPopUpOption : MonoBehaviour
 {
@@ -13,14 +13,13 @@ public class DisplayPopUpOption : MonoBehaviour
         optionPopUp.SetActive(false);
     }
 
-    public void ActiveAutoPilot()
+    public void CompareAutoPilot(int choiceIndex)
     {
-        Debug.Log("오토파일럿 선택");
-        videoControl.OnPlayVideo();
+        TabletUIManager.Instance.UpdateAutoPilot(choiceIndex);
     }
 
-    public void ActiveFSD()
+    public void PlayAutoPilotVideo()
     {
-        Debug.Log("FSD 선택");
+        videoControl.OnPlayVideo();
     }
 }

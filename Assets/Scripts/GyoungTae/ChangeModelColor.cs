@@ -52,6 +52,7 @@ public class ChangeModelColor : MonoBehaviour
         currentExternalIndex = externalColorIndex;
         
         UpdateMaterialsForExternal(CarExternal);
+        TabletUIManager.Instance.UpdateOutColor(currentExternalIndex);
     }
 
     void UpdateMaterialsForInternal(GameObject[] objectsArray)
@@ -70,16 +71,11 @@ public class ChangeModelColor : MonoBehaviour
         }
     }
 
-    public void ChangeInternalColor()
-    {
-        UpdateMaterialsForInternal(CarInternal);
-        currentInternalIndex = (currentInternalIndex + 1) % MaterialInternal.Length;
-    }
-
     public void CompareInternalColor(int internalColorIndex)
     {
         currentInternalIndex = internalColorIndex;
         UpdateMaterialsForInternal(CarInternal);
+        TabletUIManager.Instance.UpdateSeatColor(currentInternalIndex);
     }
 
 
@@ -98,16 +94,11 @@ public class ChangeModelColor : MonoBehaviour
         }
     }
 
-    public void ChangeWheelColor()
-    {
-        UpdateMaterialsForWheel(CarWheel);
-        currentWheelIndex = (currentWheelIndex + 1) % MaterialWheel.Length;
-    }
-
     public void CompareWheelsColor(int wheelColorIndex)
     {
         currentWheelIndex = wheelColorIndex;
         UpdateMaterialsForWheel(CarWheel);
+        TabletUIManager.Instance.UpdateWheel(currentWheelIndex);
     }
 
 }
