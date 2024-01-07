@@ -16,7 +16,7 @@ public class VideoControl : MonoBehaviour
     }
     public void OnPlayVideo()
     {
-        rawImageHandle.enabled = true;
+        rawImageHandle.enabled = true;  // 24.01.06 나중에 없애고, 이 위치에 설명 부분 추가 함. 
 
         myVideo.SetActive(true);
         videoClip.Play();
