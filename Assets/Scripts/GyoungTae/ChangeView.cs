@@ -56,19 +56,19 @@ public class ChangeView : MonoBehaviour
         switch (moveIndex)
         {
             case 0:
-                Vector3 zeroIndex_InsidePosition = new Vector3(7.1f, 0.05f, 2.95f);
+                Vector3 zeroIndex_InsidePosition = new Vector3(7.1f, 1.35f, 2.95f);
                 InsidePosition = zeroIndex_InsidePosition;
                 break;
             case 1:
-                Vector3 oneIndex_InsidePosition = new Vector3(6.2f, 0.05f, 2.95f);
+                Vector3 oneIndex_InsidePosition = new Vector3(6.2f, 1.35f, 2.95f);
                 InsidePosition = oneIndex_InsidePosition;
                 break;
             case 2:
-                Vector3 twoIndex_InsidePosition = new Vector3(6.2f, 0.05f, 3.88f);
+                Vector3 twoIndex_InsidePosition = new Vector3(6.2f, 1.35f, 3.88f);
                 InsidePosition = twoIndex_InsidePosition;
                 break;
             case 3:
-                Vector3 thirdIndex_InsidePosition = new Vector3(6.9f, 0.05f, 3.88f);
+                Vector3 thirdIndex_InsidePosition = new Vector3(6.9f, 1.35f, 3.88f);
                 InsidePosition = thirdIndex_InsidePosition;
                 break;
 
