@@ -24,6 +24,8 @@ public class TabletUIManager : MonoBehaviour
     [SerializeField] private Text priceText;
     public int currentCarPrice = 56990000; // 초기 가격 설정
 
+    public List<int> chocieIndexValue = new List<int>();
+
     private int previousPlusOutColorPrice = 0;
     private int previousPlusWheelPrice = 0;
     private int previousPlusSeatColorPrice = 0;
@@ -42,16 +44,17 @@ public class TabletUIManager : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-        else
-        {
-            Destroy(gameObject);
+    
         }
     }
 
+    public void SaveOption()
+    {
+        Debug.Log("저장 버튼 클릭");
+        SaveOptions.Instance.ReceiveIndex(chocieIndexValue, currentCarPrice);
+    }
 
+    
     public void UpdateOutColor(int outColorIndex)
     {
         CarOutColor.enabled = true;
@@ -61,8 +64,10 @@ public class TabletUIManager : MonoBehaviour
             CarOutColor.sprite = OutColorSprite[outColorIndex];
 
             // 디버그 로그를 통해 어떤 차량 컬러가 반영되는지 확인합니다.
-            Debug.Log($"차량 외장 컬러 반영: {outColorIndex}");
+         //   Debug.Log($"차량 외장 컬러 반영: {outColorIndex}");
             ChangeCarPrice("OutColor", outColorIndex);
+
+            chocieIndexValue[0] = outColorIndex;
         }
         else
         {
@@ -77,8 +82,10 @@ public class TabletUIManager : MonoBehaviour
         {
             CarWheel.sprite = WheelSprite[wheelIndex];
 
-            Debug.Log($"차량 휠 반영: {wheelIndex}");
+         //   Debug.Log($"차량 휠 반영: {wheelIndex}");
             ChangeCarPrice("Wheel", wheelIndex);
+
+            chocieIndexValue[1] = wheelIndex;
         }
         else
         {
@@ -93,8 +100,10 @@ public class TabletUIManager : MonoBehaviour
         {
             CarSeatColor.sprite = SeatSprite[seatColorIndex];
 
-            Debug.Log($"차량 시트 컬러 반영: {seatColorIndex}");
+         //   Debug.Log($"차량 시트 컬러 반영: {seatColorIndex}");
             ChangeCarPrice("SeatColor", seatColorIndex);
+
+            chocieIndexValue[2] = seatColorIndex;
         }
         else
         {
@@ -109,8 +118,10 @@ public class TabletUIManager : MonoBehaviour
         {
             AutoPilot.sprite = AutoPilotSprite[autoPilotIndex];
 
-            Debug.Log($"오토파일럿 반영: {autoPilotIndex}");
+        //    Debug.Log($"오토파일럿 반영: {autoPilotIndex}");
             ChangeCarPrice("AutoPilot", autoPilotIndex);
+
+            chocieIndexValue[3] = autoPilotIndex;
         }
         else
         {
