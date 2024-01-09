@@ -16,7 +16,9 @@ public class ToastPopup : MonoBehaviour
     [SerializeField] private float textr;
     [SerializeField] private float textg;
     [SerializeField] private float textb;
-
+    [Space]
+    [Header("Text Color")]
+    [SerializeField] private Vector3 offset;
     // µð¹ö±ë¿ë
     int count;
     private void Update()
@@ -35,6 +37,7 @@ public class ToastPopup : MonoBehaviour
             image.color = new Color(r, g, b, 0);
         }
 
+        transform.position = Camera.main.transform.position + offset;
         LeanTween.cancelAll(gameObject);
         textComponent.text = textNeededToBeShown;
         SetAlpha();
