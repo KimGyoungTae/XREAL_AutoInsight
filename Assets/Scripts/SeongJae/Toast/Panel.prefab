@@ -95,6 +95,7 @@ MonoBehaviour:
   textr: 0
   textg: 0
   textb: 0
+  offset: {x: 0, y: -1, z: 390}
 --- !u!1 &4854535523631983881
 GameObject:
   m_ObjectHideFlags: 0
