@@ -82,7 +82,7 @@ public class ChangeView : MonoBehaviour
 
     }
 
-    public void ChangeOutSidesideViewPoint()
+    public void ChangeOutSideViewPoint()
     {
         if (targetObject != null)
         {
