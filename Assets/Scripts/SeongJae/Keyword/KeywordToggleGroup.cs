@@ -42,7 +42,7 @@ public class KeywordToggleGroup : MonoBehaviour
         // toggle들을 저장할 배열.
         keywordToggles = new KeywordToggle[numberOfItems];
 
-        // 현재 enum에 따라 전달하는 textComponent 배열.
+        // 현재 enum에 따라 전달하는 text 배열.
         // toggle의 text를 해당 string으로 변경하게 됨.
         string[] keywords = GetKeywordArray(currentCategory);
 
