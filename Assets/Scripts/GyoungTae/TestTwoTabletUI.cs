@@ -8,8 +8,8 @@ public class TestTwoTabletUI : MonoBehaviour
     public InputActionAsset inputActions;
 
     public Camera mainCamera;
-    public GameObject TestUI;
-    public GameObject ControllerTestUI;
+    public GameObject TestUI;   // HMD 움직임을 추적하는 UI
+    public GameObject ControllerTestUI; // 컨트롤러 움직임을 추적하는 UI
 
     private float distanceFromCamera = 1.5f;
 
@@ -54,7 +54,7 @@ public class TestTwoTabletUI : MonoBehaviour
         if (secondaryButton == 1 && previousSecondaryButton != 1)
         {
             // 현재 상태의 반대 값을 넘겨서 업데이트
-            if (!isControllerTabletOpened && !isHeadTabletOpened)
+            if (!isControllerTabletOpened && !isHeadTabletOpened && TestUI != null)
             {
                 ActionTabletUI(!TestUI.activeSelf, TestUI);
                 isHeadTabletOpened = true;
@@ -82,23 +82,27 @@ public class TestTwoTabletUI : MonoBehaviour
 
     void UpdateUIToCameraPosition()
     {
-        if (TestUI.activeSelf)
+        if (TestUI != null)
         {
-            // MainCamera의 위치와 방향을 가져와서 TestUI를 바로 앞에 배치합니다.
+            if(TestUI.activeSelf)
+            {
+                // MainCamera의 위치와 방향을 가져와서 TestUI를 바로 앞에 배치합니다.
 
-            Vector3 cameraPosition = mainCamera.transform.position;
-            Vector3 updateForward = new Vector3(mainCamera.transform.forward.x, 0, mainCamera.transform.forward.z).normalized;
-            Vector3 updateTabletPos = cameraPosition + updateForward * distanceFromCamera;
+                Vector3 cameraPosition = mainCamera.transform.position;
+                Vector3 updateForward = new Vector3(mainCamera.transform.forward.x, 0, mainCamera.transform.forward.z).normalized;
+                Vector3 updateTabletPos = cameraPosition + updateForward * distanceFromCamera;
 
 
-            // TestUI의 위치를 업데이트합니다.
+                // TestUI의 위치를 업데이트합니다.
 
-            //TestUI.transform.position = tabletPosition;
-            TestUI.transform.position = updateTabletPos;
+                //TestUI.transform.position = tabletPosition;
+                TestUI.transform.position = updateTabletPos;
 
-            TestUI.transform.LookAt(cameraPosition);
-            // 반대 방향으로 향하고 있어 앞쪽 축을 뒤집는다.
-            TestUI.transform.forward *= -1;
+                TestUI.transform.LookAt(cameraPosition);
+                // 반대 방향으로 향하고 있어 앞쪽 축을 뒤집는다.
+                TestUI.transform.forward *= -1;
+            }
+            
         }
     }
 }
