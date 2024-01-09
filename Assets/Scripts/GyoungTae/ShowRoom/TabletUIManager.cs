@@ -133,7 +133,7 @@ public class TabletUIManager : MonoBehaviour
     void UpdatePriceText(int price)
     {
         // 숫자를 천만원 단위로 표시하는 포맷으로 변경
-        string formattedPrice = string.Format("{0:#,##0}원", price);
+        string formattedPrice = string.Format("{0:#,##0}", price);
 
         // 텍스트 업데이트
         priceText.text = formattedPrice;

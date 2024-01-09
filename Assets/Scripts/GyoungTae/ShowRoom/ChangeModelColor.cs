@@ -55,6 +55,7 @@ public class ChangeModelColor : MonoBehaviour
         TabletUIManager.Instance.UpdateOutColor(currentExternalIndex);
     }
 
+
     void UpdateMaterialsForInternal(GameObject[] objectsArray)
     {
         // 주어진 배열의 모든 오브젝트에 대해 재질을 설정
