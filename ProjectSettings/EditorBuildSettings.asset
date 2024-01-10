@@ -5,24 +5,48 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/0_HomeScene.unity
     guid: 1bc48cdb7aa312241bbadb9d568f4590
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1_NewCarMainScene.unity
     guid: 42e49a932244fff40b153fcca656704e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/2_KeywordScene.unity
     guid: 4bbb963d15dba734fa4097a3ce116b29
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3_CarSelectionScene.unity
     guid: ce9bdbf2e74ab5841bb1ed37fbb057fb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/4_CarTrimScene.unity
     guid: 328d42ba92ca41443844f32eba8c4e73
   - enabled: 1
+    path: Assets/Scenes/final/f0_HomeScene.unity
+    guid: 2d14f4bb81354c14ab93da6790702b11
+  - enabled: 1
+    path: Assets/Scenes/final/f1_NewCarMainScene.unity
+    guid: 60eb4f674cff7ad4c9fe914ba91cdc92
+  - enabled: 1
+    path: Assets/Scenes/final/f2_Keyword1.unity
+    guid: 074fbef190db55a4f896c91b7d218ebd
+  - enabled: 1
+    path: Assets/Scenes/final/f2_Keyword2.unity
+    guid: 8e99ab9237140ef4eb4b2129b0cda6ff
+  - enabled: 1
+    path: Assets/Scenes/final/f2_Keyword3.unity
+    guid: 83578df061f7cd94c9609b93ee45ad19
+  - enabled: 1
+    path: Assets/Scenes/final/f3_CarSelectionScene.unity
+    guid: 2b5f6d7acb603854bb7b456dfc8a0fb9
+  - enabled: 1
+    path: Assets/Scenes/final/f4_CarTrimScene.unity
+    guid: 09bd27c581c2d2749a9f9a827c142e29
+  - enabled: 1
     path: Assets/Scenes/5_ShowRoomScene.unity
     guid: 92005f331e8b5bd41ade77e8bcab3f68
+  - enabled: 1
+    path: Assets/Scenes/final/f6_CartScene.unity
+    guid: a7780c32453dea946afc77954028d667
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 24883c79f8d932143835210a3abc8574,
       type: 2}
