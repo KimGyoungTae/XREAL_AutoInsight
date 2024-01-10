@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/final/f4_CarTrimScene.unity
     guid: 09bd27c581c2d2749a9f9a827c142e29
   - enabled: 1
-    path: Assets/Scenes/5_ShowRoomScene.unity
+    path: Assets/Scenes/final/f5_ShowRoomScene.unity
     guid: 92005f331e8b5bd41ade77e8bcab3f68
   - enabled: 1
     path: Assets/Scenes/final/f6_CartScene.unity
