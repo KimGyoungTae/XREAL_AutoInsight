@@ -16,9 +16,9 @@ public class VideoControl : MonoBehaviour
     }
     public void OnPlayVideo()
     {
-        rawImageHandle.enabled = true;
+      //  rawImageHandle.enabled = true;  // 24.01.06 나중에 없애고, 이 위치에 설명 부분 추가 함. 
 
-        myVideo.SetActive(true);
+      //  myVideo.SetActive(true);
         videoClip.Play();
 
         videoClip.loopPointReached += OnVideoEnd;
@@ -28,8 +28,8 @@ public class VideoControl : MonoBehaviour
 
     public void OnPauseVideo()
     {
-        videoClip.Pause();
-        myVideo.SetActive(false);
+       videoClip.Pause();
+     //   myVideo.SetActive(false);
     }
 
     private void OnVideoEnd(VideoPlayer source)
