@@ -22,24 +22,34 @@ Web Viewer or 360도 영상 기반으로 된 기존 차량 구매 환경의 불�
 
 <br>
 
-## 🙋 프로젝트에서 나의 역할
-총 10명으로 구성된 팀원(리서치 3명, 데브 4명, 디자인 3명) 중 데브 팀의 팀장 역할을 맡아 수행하였습니다.
-<details>
-<summary><h4>프로젝트에 필요한 기본 기능들이 있는 환경을 구축하여 팀원들과 깃허브로 공유</h4></summary>
- 
- ![image](https://github.com/KimGyoungTae/XREAL_AutoInsight/assets/83820089/507222bb-a8a9-4cb3-9c1b-acc2994f75f6)
+## 🙋 프로젝트 구성원
+<table>
+  <tr>
+    <td>
 
-</details>
+| 이름 | 역할 |
+|---------|---------|
+| 최승원  | Research, Team Leader |
+|복정욱|Research|
+|조민주|Research|
 
-<details>
-<summary><h4>프로젝트의 핵심인 쇼룸 내 기능 구현을 맡음</h4></summary>
- 
-- 차량 외부/내부 시점 변환 및 내부 안에서도 자유로운 시점 변환 기능 구현
- 
-- 차량 옵션 선택에 따라 디자인 실시간 반영 -> 차량 컬러, 휠 디자인, 차량 내부 시트 컬러
-  
-- 쇼룸 내 모든 UI 배치 및 UI Depth Flow
-  
-- 차량 옵션 선택에 따라 실시간 총가격 변화 기능 구현
 
-</details>
+
+| 이름 | 역할 |
+|---------|---------|
+|옥금비|Design Leader|
+|한지윤|Design|
+|김수현|Design|
+
+
+
+| 이름 | 역할 |
+|---------|---------|
+| 김경태   | Dev Leader   |
+| 이민서   | Dev   |
+| 박조은   | Dev   |
+| 홍성재   | Dev   |
+
+  </tr>
+</table>
+
